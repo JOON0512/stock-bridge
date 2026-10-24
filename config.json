@@ -1,0 +1,136 @@
+{
+  "runtime_dir": "runtime",
+  "profiles": {
+    "paper": {
+      "broker": "paper",
+      "mode": "paper",
+      "allowed_symbols": [
+        "KR:005930",
+        "US:AAPL"
+      ],
+      "paper_prices": {
+        "005930": "70000",
+        "AAPL": "200"
+      },
+      "limits": {
+        "max_order": {
+          "KRW": "500000",
+          "USD": "500"
+        },
+        "max_daily_turnover": {
+          "KRW": "10000000",
+          "USD": "5000"
+        },
+        "max_daily_orders": 100,
+        "max_open_orders": 2,
+        "max_price_deviation": "0.03",
+        "fee_buffer": "0.01"
+      }
+    },
+    "toss_live": {
+      "broker": "toss",
+      "mode": "live",
+      "env_prefix": "TOSS_LIVE",
+      "live_enabled": false,
+      "allowed_symbols": [],
+      "limits": {
+        "max_order": {
+          "KRW": "0",
+          "USD": "0"
+        },
+        "max_daily_turnover": {
+          "KRW": "0",
+          "USD": "0"
+        },
+        "max_daily_orders": 5,
+        "max_open_orders": 2,
+        "max_price_deviation": "0.03",
+        "fee_buffer": "0.01"
+      }
+    },
+    "kis_demo": {
+      "broker": "kis",
+      "mode": "sandbox",
+      "env_prefix": "KIS_DEMO",
+      "live_enabled": false,
+      "allowed_symbols": [],
+      "limits": {
+        "max_order": {
+          "KRW": "0",
+          "USD": "0"
+        },
+        "max_daily_turnover": {
+          "KRW": "0",
+          "USD": "0"
+        },
+        "max_daily_orders": 5,
+        "max_open_orders": 2,
+        "max_price_deviation": "0.03",
+        "fee_buffer": "0.01"
+      }
+    },
+    "kis_live": {
+      "broker": "kis",
+      "mode": "live",
+      "env_prefix": "KIS_LIVE",
+      "live_enabled": false,
+      "allowed_symbols": [],
+      "limits": {
+        "max_order": {
+          "KRW": "0",
+          "USD": "0"
+        },
+        "max_daily_turnover": {
+          "KRW": "0",
+          "USD": "0"
+        },
+        "max_daily_orders": 5,
+        "max_open_orders": 2,
+        "max_price_deviation": "0.03",
+        "fee_buffer": "0.01"
+      }
+    },
+    "kiwoom_demo": {
+      "broker": "kiwoom",
+      "mode": "sandbox",
+      "env_prefix": "KIWOOM_DEMO",
+      "live_enabled": false,
+      "allowed_symbols": [],
+      "limits": {
+        "max_order": {
+          "KRW": "0",
+          "USD": "0"
+        },
+        "max_daily_turnover": {
+          "KRW": "0",
+          "USD": "0"
+        },
+        "max_daily_orders": 5,
+        "max_open_orders": 2,
+        "max_price_deviation": "0.03",
+        "fee_buffer": "0.01"
+      }
+    },
+    "kiwoom_live": {
+      "broker": "kiwoom",
+      "mode": "live",
+      "env_prefix": "KIWOOM_LIVE",
+      "live_enabled": false,
+      "allowed_symbols": [],
+      "limits": {
+        "max_order": {
+          "KRW": "0",
+          "USD": "0"
+        },
+        "max_daily_turnover": {
+          "KRW": "0",
+          "USD": "0"
+        },
+        "max_daily_orders": 5,
+        "max_open_orders": 2,
+        "max_price_deviation": "0.03",
+        "fee_buffer": "0.01"
+      }
+    }
+  }
+}

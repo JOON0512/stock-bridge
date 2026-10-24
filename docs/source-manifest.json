@@ -1,0 +1,97 @@
+{
+  "checked_at": "2026-09-19T19:47:46.160390+00:00",
+  "repos": [
+    {
+      "repo": "koreainvestment/open-trading-api",
+      "commit": "b4e6249714418aa57833d1cbbbced39cbcc5b125",
+      "date": "2026-08-26T06:39:24Z"
+    },
+    {
+      "repo": "Kiwoom-Securities/Kiwoom-REST-API",
+      "commit": "953e5dbff123f437ab4d11a78a95191a685eb51f",
+      "date": "2026-09-15T06:12:16Z"
+    }
+  ],
+  "files": [
+    {
+      "name": "toss-overview.md",
+      "sha256": "d0f63ff1a8e7ff24b762ab465f1a46ebba207689012fa815ef0d5009b564f44f",
+      "bytes": 28115
+    },
+    {
+      "name": "kiwoom-tree.json",
+      "sha256": "cb53ae531267b9e601ae7be03a57bf8329dc6ac7809f1e887f2afcee7572f901",
+      "bytes": 38386
+    },
+    {
+      "name": "toss-faq.md",
+      "sha256": "0dd9ad07af2bdf4b333a8ba902ede5b727e5f87cf95d77d7b5786119159d216b",
+      "bytes": 12077
+    },
+    {
+      "name": "kis-inquire_daily_ccld.txt",
+      "sha256": "69f4aa358e7cae3f4470b34d87ded7dac587bad2bef88045ea42c7a8102f34e7",
+      "bytes": 9354
+    },
+    {
+      "name": "kis-inquire_psbl_order.txt",
+      "sha256": "cb1b6d8e81763887c5d1bb04354ab64176ec8f82872ec366d5d31a70d5ed8e96",
+      "bytes": 4350
+    },
+    {
+      "name": "kis-domestic.py",
+      "sha256": "8040003ad8cd5ac6da914f46d1ad9844f167e78de2c9e5e01e55ab02bedd0151",
+      "bytes": 559222
+    },
+    {
+      "name": "kis-order_rvsecncl.txt",
+      "sha256": "ef15e599d4fbaf9d3302faff1a125c45eceed86cc2799a20770728c34a156cb0",
+      "bytes": 5095
+    },
+    {
+      "name": "kis-inquire_balance.txt",
+      "sha256": "1f5707c2415dcc5b6e6f5d8ae3d08ae02b96880acb88c9cdd44e8613a1b5ab69",
+      "bytes": 6780
+    },
+    {
+      "name": "kis-overseas.py",
+      "sha256": "3d81b7f0eafcf4313b4dd798824ab265f006a02bb91f4b96f57d2472ef2c5957",
+      "bytes": 241544
+    },
+    {
+      "name": "kis-inquire_psbl_sell.txt",
+      "sha256": "22bd6c486e7cfe2d9802503955428bd9f18fc90c4a234cc6f26ab9b7043be373",
+      "bytes": 3452
+    },
+    {
+      "name": "kiwoom-guide.html",
+      "sha256": "014ca52662febc58bf6c83b6b3c0c53b3c1278d075f039714a349e385c47661b",
+      "bytes": 122796
+    },
+    {
+      "name": "toss-index.txt",
+      "sha256": "bbff77eaa55df2480262349ed2790f82392195bb5d91205df2740a4ce1c87e2e",
+      "bytes": 2847
+    },
+    {
+      "name": "kiwoom-spec.json",
+      "sha256": "42a7b3912c9d9588c83bdc2db7779c8d2e038703a2b5562e54ef46ae905cba79",
+      "bytes": 3850830
+    },
+    {
+      "name": "toss-openapi.json",
+      "sha256": "791082da4cb379117ed9fdc29a45bd42746f7a1aec368da1e9f4e1f3bfbff5b4",
+      "bytes": 420256
+    },
+    {
+      "name": "kis-order_cash.txt",
+      "sha256": "02c390628a90a7a6449de72956dafaf7889ec94631b2bc2e5fd8784b78a2cfc4",
+      "bytes": 5304
+    },
+    {
+      "name": "kiwoom-home.html",
+      "sha256": "bca9aa506c1dbbd1b3189ea5571858311b0e140095d983ca1c2292a593aa9a48",
+      "bytes": 51849
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[project]
+name = "stock-bridge"
+version = "0.1.0"
+description = "Local, cash-only stock order execution via official broker APIs"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+stock-bridge = "trader.cli:main"

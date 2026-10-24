@@ -1,0 +1,13 @@
+[
+  {
+    "client_id": "CHANGE-TO-UNIQUE-ID",
+    "market": "KR",
+    "symbol": "005930",
+    "side": "BUY",
+    "quantity": 1,
+    "price": "70000",
+    "not_before": "2000-01-01T09:10:00+09:00",
+    "expires_at": "2000-01-01T15:00:00+09:00",
+    "trigger": null
+  }
+]
