@@ -4,7 +4,7 @@
 
 ## 1. 계좌 개설·ID 연결·API 신청
 
-한국투자증권 계좌가 없다면 본인이 비대면 계좌를 개설하고 HTS ID를 연결합니다. 홈페이지/앱의 Open API 서비스 신청에서 실전 앱키·앱시크릿을 발급받습니다. 모의투자 참가 신청도 하고 **모의투자용 키를 별도로 발급**받습니다. [공식 서비스 이용안내](https://apiportal.koreainvestment.com/apiservice-summary), [공식 저장소의 시작 절차](https://github.com/koreainvestment/open-trading-api)
+한국투자증권 계좌와 HTS ID가 필요합니다. 홈페이지/앱의 Open API 서비스 신청에서 실전 앱키·앱시크릿을 발급받습니다. 모의투자 참가 신청도 하고 **모의투자용 키를 별도로 발급**받습니다. [공식 서비스 이용안내](https://apiportal.koreainvestment.com/apiservice-summary), [공식 저장소의 시작 절차](https://github.com/koreainvestment/open-trading-api)
 
 모의투자 계좌에 쓰는 키와 실계좌 키를 섞으면 인증·주문이 거부될 수 있습니다. 종합계좌번호 8자리와 상품코드 2자리를 따로 확인합니다. 계좌 비밀번호 자체는 이 코드의 요청 본문에 넣지 않습니다.
 
@@ -70,7 +70,7 @@ python3 -m trader --config config.local.json --profile kis_demo sync 주문의_c
 
 ## 6. 실전 계좌 준비와 키 분리
 
-실전 계좌에 본인이 정한 검증용 현금을 준비합니다. 토스에 보유한 주식·현금은 한국투자 API로 주문할 수 없습니다. 현금 이체·주식 대체는 본인이 별도로 해야 하며, 이번에 구현하거나 실행하지 않았습니다.
+실전 프로필은 연결한 한국투자증권 계좌의 잔고를 사용합니다.
 
 ```dotenv
 KIS_LIVE_APP_KEY=실전앱키
@@ -88,7 +88,7 @@ python3 -m trader --config config.local.json --profile kis_live holdings
 
 ## 7. 실전 첫 주문과 체결·취소 검증
 
-모의 주문 파일을 그대로 재사용하지 말고 새 ID·시각·가격으로 `private/kis-live-order.json`을 준비합니다. `preview`와 `preflight` 확인 후 본인이 `kis_live.live_enabled=true`로 바꿉니다.
+모의 주문 파일을 그대로 재사용하지 말고 새 ID·시각·가격으로 `private/kis-live-order.json`을 준비합니다. `preview`와 `preflight` 확인 후 `kis_live.live_enabled=true`로 바꿉니다.
 
 ```bash
 python3 -m trader --config config.local.json --profile kis_live submit --file private/kis-live-order.json --execute --confirm-live

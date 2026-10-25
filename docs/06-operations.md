@@ -18,7 +18,7 @@
 # 기본: 한 번 읽고 요청 미리보기만 출력
 python3 -m trader --config config.local.json --profile toss_live run --queue private/queue.json
 
-# 아래는 실제 주문을 할 수 있는 장기 실행. 검증 후 본인이 실행합니다.
+# 실전 주문을 전송할 수 있는 장기 실행
 python3 -m trader --config config.local.json --profile toss_live run --queue private/queue.json --execute --confirm-live --poll 30 --max-cycles 0
 ```
 

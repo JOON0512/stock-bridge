@@ -1,16 +1,16 @@
 # 키움증권 REST: 계좌 신청부터 실전 국내주식까지
 
-구현 프로필: `kiwoom_demo`, `kiwoom_live`. **Windows OpenAPI+가 아니라 REST API**입니다. 이번 코드는 국내 KRX 현금 지정가 주문을 연결했습니다. 공식 REST 서비스의 미국주식 항목은 확인했지만 이 어댑터에는 아직 구현하지 않았습니다.
+프로필: `kiwoom_demo`, `kiwoom_live`. 키움 REST API로 국내 KRX 현금 지정가 주문을 처리합니다.
 
 ## 1. 계좌와 REST API 신청
 
-키움 계좌가 없으면 본인이 개설합니다. [키움 REST 포털](https://openapi.kiwoom.com/)의 **API 사용신청**에서 로그인하고 안내된 약관·동의 절차를 진행합니다. 예전 OpenAPI+ 신청과 REST API 키 발급을 혼동하지 마세요. [공식 이용안내](https://openapi.kiwoom.com/intro/serviceInfo)
+키움 계좌가 필요합니다. [키움 REST 포털](https://openapi.kiwoom.com/)의 **API 사용신청**에서 로그인하고 안내된 약관·동의 절차를 진행합니다. 예전 OpenAPI+ 신청과 REST API 키 발급을 혼동하지 마세요. [공식 이용안내](https://openapi.kiwoom.com/intro/serviceInfo)
 
 ## 2. 모의투자 가입·허용 IP·계좌 등록
 
 모의투자는 별도 참가 신청이 필요합니다. REST 포털의 **모의투자 App Key 관리**에서 허용 IP와 모의 계좌를 등록하고 키를 발급합니다. 실전은 **계좌 App Key 관리**에서 별도로 진행합니다. 공식 문서상 허용된 IP에서만 API 인증이 가능합니다. 실행할 Mac 또는 서버의 공인 IP를 등록하세요. [공식 신청 절차](https://openapi.kiwoom.com/intro/serviceInfo), [모의투자 안내](https://openapi.kiwoom.com/intro/mockInvestInfo?dummyVal=0)
 
-모의 국내주식의 매매·계좌 조회는 KRX 기준으로 검증합니다. 이번 프로그램도 KRX만 사용합니다. 이 단계에서 계좌 비밀번호·본인 확인이 필요하면 본인이 처리한 뒤 프로그램 작업을 이어갑니다.
+모의 국내주식의 매매·계좌 조회는 KRX 기준으로 검증합니다. 이 어댑터도 KRX만 사용합니다.
 
 ## 3. 설정 파일 준비
 
@@ -82,14 +82,14 @@ KIWOOM_LIVE_APP_SECRET=실전시크릿
 KIWOOM_LIVE_ACCOUNT=실전10자리계좌번호
 ```
 
-`kiwoom_live`의 허용 종목과 금액은 모의 프로필과 별도로 직접 설정합니다. 실전 계좌 잔고 조회가 성공하고 계좌번호가 일치하는지 확인합니다. 원래 토스 계좌의 자산이 키움 계좌로 자동 이동하는 것은 아닙니다.
+`kiwoom_live`의 허용 종목과 금액은 모의 프로필과 별도로 직접 설정합니다. 실전 계좌 잔고 조회가 성공하고 계좌번호가 일치하는지 확인합니다.
 
 ```bash
 python3 -m trader --config config.local.json --profile kiwoom_live accounts
 python3 -m trader --config config.local.json --profile kiwoom_live holdings
 ```
 
-## 8. 본인이 첫 실전 주문 실행
+## 8. 실전 주문
 
 새 주문 ID·당일 시각·지정가로 `private/kiwoom-live-order.json`을 만들고 `preview`, `preflight`를 확인합니다. `kiwoom_live.live_enabled=true`로 바꾼 후:
 

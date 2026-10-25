@@ -1,18 +1,16 @@
-# 토스증권: 기존 계좌에서 국내·미국 주문까지
+# Toss
 
-구현 프로필: `toss_live`. **현재 실전 비활성, API 키 미입력.** 정수 수량의 지정가 매수·매도·취소·주문 상태 조회를 구현했습니다. 별도 paper 서버는 공개 문서에서 확인하지 못했으며 로컬 `paper`를 토스 모의투자로 부르지 않습니다.
+프로필: `toss_live`. 국내·미국 주식의 정수 수량 지정가 주문, 취소, 상태 조회를 지원합니다. 로컬 `paper`는 별도 어댑터입니다.
 
 ## 1. 계좌와 API 이용 가능 여부 확인
 
 토스증권 웹에 평소 방식으로 로그인하고 **설정 → Open API**를 엽니다. 해당 메뉴에서 이용약관과 허용 범위를 확인하고 `client_id`, `client_secret`을 발급합니다. 계좌를 새로 만들 필요가 있는지는 현재 계좌의 이용 자격에 따라 확인해야 합니다. 공식 계좌 API는 현재 종합매매 계좌를 반환한다고 설명합니다. [공식 개요](https://openapi.tossinvest.com/openapi-docs/overview.md), [계좌 API 명세](https://openapi.tossinvest.com/openapi-docs/latest/openapi.json)
 
-키 발급·약관 동의는 본인이 진행합니다. 이번 작업에서는 계좌 설정을 바꾸거나 키를 발급하지 않았습니다.
-
 ## 2. 허용 IP 등록
 
 같은 Open API 화면의 **허용 IP 관리**에 프로그램이 실행될 컴퓨터/서버의 공인 IP를 등록합니다. `192.168.x.x` 같은 공유기 내부 IP가 아닙니다. VPN, 다른 Wi-Fi, 모바일 핫스팟으로 바뀌면 외부 IP도 달라질 수 있습니다. 고정 IP 서버를 쓸 때는 서버 IP를 등록해야 합니다. [공식 시작 절차·FAQ](https://openapi.tossinvest.com/openapi-docs/faq.md)
 
-이 단계가 막히면 키·IP 등록을 대기 항목으로 남기고 로컬 `demo`와 `preview`를 먼저 실행할 수 있습니다.
+키 발급 전에도 `demo`와 `preview`는 실행할 수 있습니다.
 
 ## 3. 비밀값을 로컬 파일에 입력
 
@@ -48,7 +46,7 @@ python3 -m trader --config config.local.json --profile toss_live quote AAPL
 python3 -m trader --config config.local.json --profile toss_live broker-orders
 ```
 
-주식 평가액·달러 잔액이 아니라 API의 현금 주문가능금액이 주문 직전 검사에 쓰입니다. 과거 계좌 내역만으로 현재 구매력을 가정하지 않습니다.
+주식 평가액·달러 잔액이 아니라 API의 현금 주문가능금액이 주문 직전 검사에 쓰입니다.
 
 ## 5. 허용 종목과 예산 설정
 
@@ -87,9 +85,9 @@ python3 -m trader --config config.local.json --profile toss_live preflight --fil
 
 `preview`는 키 없이도 요청 구조를 보여줍니다. `preflight`는 설정·시각을 점검하고 실제 잔고·시세를 조회하지만 주문하지 않습니다. 최종 한도 검사는 제출 직전에 다시 합니다. 토스 시세가 120초보다 오래되면 주문을 막고, 증권사 거래일 캘린더로 휴장·정규장 여부도 확인합니다.
 
-## 7. 본인이 실전 활성화 후 첫 주문 실행
+## 7. 실전 활성화와 주문
 
-종목·수량·가격·현금 한도를 확인하고 `profiles.toss_live.live_enabled`를 `true`로 바꿉니다. 아래 명령은 실제 돈을 쓰는 주문을 전송할 수 있습니다. 이번 작업 중에는 실행하지 않았습니다.
+종목·수량·가격·현금 한도를 확인하고 `profiles.toss_live.live_enabled`를 `true`로 바꿉니다. 아래 명령은 실제 돈을 쓰는 주문을 전송할 수 있습니다.
 
 ```bash
 python3 -m trader --config config.local.json --profile toss_live submit --file private/toss-order.json --execute --confirm-live
